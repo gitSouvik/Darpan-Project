@@ -1,0 +1,13 @@
+@import './tailwind.css';
+
+/* Hide horizontal scrollbar on mobile while keeping scroll behavior */
+@media (max-width: 767px) {
+  .mobile-scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .mobile-scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}

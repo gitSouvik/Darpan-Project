@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Theme Colors - warm yellow + black text */
+    --color-primary: #7C2D12; /* keep accent tone if used as primary */
+    --color-primary-foreground: #FFF7ED; /* warm off-white */
+    --color-secondary: #FBBF24; /* vibrant yellow */
+    --color-secondary-foreground: #7C2D12; /* red-brown on yellow */
+    --color-accent: #F97316; /* warm orange accent */
+    --color-accent-foreground: #FFF7ED; /* warm off-white */
+
+    /* Background Colors */
+    --color-background: #FFFFFF; /* white background */
+    --color-foreground: #111827; /* near-black text */
+    --color-card: #FFFFFF; /* white cards */
+    --color-card-foreground: #111827; /* near-black text */
+
+    /* UI Colors */
+    --color-border: #9CA3AF; /* darker gray-400 border */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #F97316; /* warm orange focus ring */
+    --color-muted: #F3F4F6; /* gray-100 muted bg */
+    --color-muted-foreground: #111827; /* near-black */
+    --color-popover: #FFFBEB; /* pale yellow popover */
+    --color-popover-foreground: #111827; /* near-black */
+
+    /* Status Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #78350F; /* amber-900 */
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+
+    /* Spacing */
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  /* Fade Up Animation */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Scroll Reveal */
+  .scroll-reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-reveal.will-animate {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Pulse Animation */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Horizontal Scroll Animation */
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-horizontal {
+    animation: scroll-horizontal 30s linear infinite;
+  }
+
+  /* Swiper Overrides */
+  .swiper-pagination-bullet {
+    background: var(--color-secondary);
+    opacity: 0.5;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
